@@ -4,7 +4,7 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-size: 18px;
   font-family: var(--main-font);
-  padding: 0 10px 0;
+  padding: 0;
   margin: 0 auto;
   background-image: var(--background-image);
   background-color: var(--background-color);
@@ -14,12 +14,6 @@
   background-attachment: fixed;
 }
 
-@media (min-width: 768px) {
-  .page {
-    padding: 0 20px 0;
-  }
-}
-
 .header {
   position: relative;
   display: grid;
@@ -27,12 +21,20 @@
   align-items: center;
   min-block-size: 668px;
   block-size: 100vh;
+  padding-inline: 10px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-inline: 20px;
+  }
 }
 
 .header__decoration-element {
   position: absolute;
   inset-block-start: 10px;
-  inset-inline-end: 0;
+  /*inset-inline-end: 0;*/
+  inset-inline-end: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -49,7 +51,7 @@
   border-radius: 50%;
   background-color: var(--accent-color-rec);
   box-shadow: 0 0 4px 2px var(--accent-color-rec);
-  /*inset-inline-start: 10px;*/
+  inset-inline-start: 10px;
 }
 
 .decorated-zone::before {
@@ -59,7 +61,7 @@
   block-size: 25px;
   border-inline-end: 1px solid var(--button-color);
   border-block-start: 1px solid var(--button-color);
-  inset-inline-end: 0;
+  inset-inline-end: 10px;
   inset-block-start: 10px;
 }
 
@@ -70,21 +72,24 @@
   block-size: 25px;
   border-inline-start: 1px solid var(--button-color);
   border-block-end: 1px solid var(--button-color);
-  inset-inline-start: 0;
+  inset-inline-start: 10px;
   inset-block-end: 10px;
 }
 
 @media (min-width: 768px) {
   .header__decoration-element {
     inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
 
   .decorated-zone::before {
     inset-block-start: 20px;
+    inset-inline-end: 20px;
   }
 
   .decorated-zone::after {
     inset-block-end: 20px;
+    inset-inline-start: 20px;
   }
 }
 
@@ -181,12 +186,12 @@
 }
 
 .section__why {
-  margin: 40px 0 0;
+  margin: 40px 10px 0;
 }
 
 @media (min-width: 768px) {
   .section__why {
-    margin: 60px 0 0;
+    margin: 60px 20px 0;
     display: grid;
     grid-template-columns: 236px 1fr;
     gap: 20px;
@@ -250,12 +255,12 @@
 }
 
 .section__what {
-  margin: 50px 0 0;
+  margin: 50px 10px 0;
 }
 
 @media (min-width: 768px) {
   .section__what {
-    margin: 60px 0 0;
+    margin: 60px 20px 0;
   }
   
   .section__what .section__title {
@@ -278,12 +283,12 @@
 }
 
 .section__advice {
-  margin: 50px 0 0;
+  margin: 50px 10px 0;
 }
 
 @media (min-width: 768px) {
   .section__advice {
-    margin: 80px 0 0;
+    margin: 80px 20px 0;
     display: grid;
     grid-template-columns: 236px 1fr;
     gap: 20px;
@@ -292,7 +297,7 @@
 
 @media (min-width: 1024px) {
   .section__advice {
-    margin: 60px 0 0;
+    margin: 60px 20px 0;
     display: grid;
     grid-template-columns: 314px 1fr;
     gap: 20px;
@@ -300,7 +305,7 @@
 }
 
 .section__pictures {
-  margin: 31px 0 0;
+  margin: 31px 10px 0;
   display: grid;
   gap: 10px;
 }
@@ -331,7 +336,7 @@
 
 @media (min-width: 768px) {
   .section__pictures {
-    margin: 40px 0 0;
+    margin: 40px 20px 0;
   }
   
   .section__pictures-title {
