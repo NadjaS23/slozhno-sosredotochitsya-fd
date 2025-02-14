@@ -87,6 +87,12 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .decorated-zone::after {
+    inset-block-end:10px;
+  }
+}
+
 .header__theme-menu {
   justify-self: end;
   margin: 20px 0 0;
@@ -149,7 +155,7 @@
 @media (min-width: 768px) {
   .header__title {
     margin: 5px 0 0 -20px;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -203,7 +209,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  color: var(--accent-color);
+  color: var(--button-color);
   margin: 0;
 }
 
@@ -392,6 +398,6 @@
   }
 
   .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem); 
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
