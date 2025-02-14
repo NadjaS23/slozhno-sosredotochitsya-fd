@@ -87,12 +87,6 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .decorated-zone::after {
-    inset-block-end:10px;
-  }
-}
-
 .header__theme-menu {
   justify-self: end;
   margin: 20px 0 0;
@@ -200,7 +194,6 @@
 
 @media (min-width: 1024px) {
   .section__why {
-    margin: 70px 0 0;
     grid-template-columns: 314px 1fr;
   }
 }
