@@ -212,18 +212,18 @@
   flex-direction: column;
 }
 
-@media (min-width: 768px) { 
-  .section__why { 
-    margin: 60px 20px 0; 
-    display: grid; 
-    grid-template-columns: 236px 1fr; 
-    gap: 20px; 
+@media (min-width: 768px) {
+  .section__why {
+    margin: 60px 20px 0;
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    gap: 20px;
   } 
 } 
 
-@media (min-width: 1024px) { 
-  .section__why { 
-    grid-template-columns: 314px 1fr; 
+@media (min-width: 1024px) {
+  .section__why {
+    grid-template-columns: 314px 1fr;
   } 
 } 
 
