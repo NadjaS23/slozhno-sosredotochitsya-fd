@@ -4,13 +4,15 @@
 */
 :root {
   --main-font: 'IBM Plex mono', sans-serif;
-  --header__color: #db00ff;
+  --header-color: #db00ff;
   --accent-color: #ff0070;
-  --text-color-with-bg: #000028;
-  --article__paragraph-color:#f1b2ce;
+  --section-title-color: #ff0070;
+  --text-color-with-background: #000028;
+  --paragraph-color:#f1b2ce;
   --background-image: url(../images/cover-image-dark.png);
   --background-color: #000028;
   --button-color: #ff0070;
   --button-hover-color: #ff007066;
   --accent-color-rec:#ff0070;
+  --decorative-corners-color: #ff0070;
 }

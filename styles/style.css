@@ -3,7 +3,9 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-size: 18px;
-  font-family: var(--main-font);
+  font-weight: 400;
+  line-height: 130%;
+  font-family: var(--main-font), Arial, sans-serif;
   padding: 0;
   margin: 0 auto;
   background-image: var(--background-image);
@@ -33,7 +35,6 @@
 .header__decoration-element {
   position: absolute;
   inset-block-start: 10px;
-  /*inset-inline-end: 0;*/
   inset-inline-end: 10px;
   display: flex;
   align-items: center;
@@ -59,8 +60,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--button-color);
-  border-block-start: 1px solid var(--button-color);
+  border-inline-end: 1px solid var(--decorative-corners-color);
+  border-block-start: 1px solid var(--decorative-corners-color);
   inset-inline-end: 10px;
   inset-block-start: 10px;
 }
@@ -70,8 +71,8 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start: 1px solid var(--button-color);
-  border-block-end: 1px solid var(--button-color);
+  border-inline-start: 1px solid var(--decorative-corners-color);
+  border-block-end: 1px solid var(--decorative-corners-color);
   inset-inline-start: 10px;
   inset-block-end: 10px;
 }
@@ -126,16 +127,21 @@
   background-color: transparent;
   color: var(--button-color);
   padding: 1.5px 13px;
-  line-height: 18px;
+  line-height: 100%;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
   outline: 1px solid var(--button-hover-color);
 }
 
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--button-color);
+.header__theme-menu-button:focus {
   outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  box-shadow: 0 1px 0 var(--button-color);
 }
 
 .header__theme-menu-button_active {
@@ -145,24 +151,28 @@
 
 .header__title {
   align-self: self-start;
-  color: var(--header__color);
   text-shadow: 4px 4px 0 var(--accent-color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 95.7px;
   margin: 15px 0 15px;
+}
+
+.accented-title-styles {
+  color: var(--header-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
 }
 
 @media (min-width: 768px) {
   .header__title {
     margin: 5px 0 0 -20px;
+  }
+
+  .accented-title-styles {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
 .header__text {
   margin: 40px 0 66px;
-  font-weight: 700;
-  line-height: 23.4px;
 }
 
 @media (min-width: 768px) {
@@ -182,7 +192,16 @@
 
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--text-color-with-bg);
+  color: var(--text-color-with-background);
+}
+
+.text-size {
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.text-bold {
+  font-weight: 700;
 }
 
 .section__why {
@@ -193,29 +212,23 @@
   .section__why {
     margin: 60px 20px 0;
     display: grid;
-    grid-template-columns: 236px 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
     gap: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .section__why {
-    grid-template-columns: 314px 1fr;
+    grid-template-columns:  repeat(auto-fit, minmax(314px, 1fr));
   }
 }
 
 .section__title {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
-  color: var(--button-color);
+  color: var(--section-title-color);
   margin: 0;
 }
 
 .article__title {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
   margin: 20px 0 10px;
 }
 
@@ -226,32 +239,28 @@
 }
 
 .article__paragraph {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  color: var(--article__paragraph-color);
+  color: var(--paragraph-color);
   margin: 10px 0 20px;
 }
 
 .article__subtitle {
-  font-size: 18px;
   font-weight: 400;
-  line-height: 23.4px;
   margin: 20px 0 10px;
 }
 
 .link-effects {
-  color: var(--article__paragraph-color);
+  color: var(--paragraph-color);
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .link-effects:hover {
-  border-block-end: 1px solid var(--article__paragraph-color);
+  outline: none;
+  box-shadow: 0 1px 0 var(--paragraph-color);
 }
 
 .link-effects:focus-visible {
-  outline: 1px solid var(--article__paragraph-color);
+  outline: 1px solid var(--paragraph-color);
 }
 
 .section__what {
@@ -298,9 +307,7 @@
 @media (min-width: 1024px) {
   .section__advice {
     margin: 60px 20px 0;
-    display: grid;
     grid-template-columns: 314px 1fr;
-    gap: 20px;
   }
 }
 
@@ -311,9 +318,6 @@
 }
 
 .section__pictures-title {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
   margin: 20px 0 0;
 }
 
@@ -385,18 +389,11 @@
 .footer__title {
   align-self: center;
   justify-self: center;
-  color: var(--header__color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 2px 2px 0 var(--accent-color);
-  line-height: 95.7px;
 }
 
 @media (min-width: 768px) {
   .footer {
     margin: 60px 0 0;
-  }
-
-  .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
